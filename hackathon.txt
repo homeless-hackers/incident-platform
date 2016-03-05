@@ -1,0 +1,63 @@
+Team Name:
+Homeless Hackers
+
+Project Name:
+Incident management service for case managers
+
+Short description:
+System to notify case managers in mental health and homeless services agencies of legal issues involving their clients
+
+Full description:
+
+The purpose of this system is to alert homeless services and mental health case managers to legal events involving their clients, for example, jail bookings or releases, probation violations, citations, or court dates. Using this information, case managers will be able to support clients in resolving their legal needs by reminding them of court dates, referring them to resources, and addressing barriers to participation in the justice system.
+
+Technology:
+
+Our solution is based on a microservices architecture around seven services:
+
+* Incident monitoring service
+  * Model person and incidents
+  * Generate events related to person and incidents
+* Incident data services
+  * Model data sources (for example, court systems, state prison systems, etc.)
+* Incident data scheduler
+  * Schedule data service polling by person
+* Incident data service
+  * The worker run by the scheduler to poll a data source by person
+* Matching service
+  * Generate a confidence interval for matching incidents to monitored persons, used to reduce false positives
+* Message broker
+  * Receives events from incident monitoring service
+  * Publishes events to incident management applications
+* Incident management application
+  * Subscribe persons to be monitored
+  * Subscribe to events per monitored person
+
+Because we've chosen to use a microservices architecture, our technology stack is strongly agnostic. Our MVP stack is based on CouchDB, Ruby (for incident data services), Python (for incident monitoring service, incident data services, and matching service), RabbitMQ, JavaScript, and Angular. The MVP stack is deployed to Heroku and uses IBM Cloudant for data persistence. The final production stack will vary based on anticipated scaling and performance requirements.
+
+Team members:
+
+Rob Martin rob@version2beta.com
+808 S 1100 E
+Salt Lake City, UT 84102
+262-853-2339
+
+Summer Bammes summerbammes@gmail.com
+6609 S 95 W #57
+Murray, UT 84...
+801-860-9068
+
+Dan Otto thedanotto@gmail.com
+808 S 1100 E
+Salt Lake City, UT 84102
+262-352-1873
+
+Jen Baguley jen.eutsler@gmail.com
+...
+...
+801-577-4480
+
+Bryan Hadlock bbhadlock@msn.com
+...
+...
+...
