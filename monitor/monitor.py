@@ -6,14 +6,14 @@ import logging, sys
 from flask import Flask, jsonify, request
 from flask.ext.cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 CORS(app)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
 @app.route('/', methods=['GET'])
 def hello_world():
-  return 'This interface is not supported. Go away.'
+  return app.send_static_file('index.html')
 
 @app.route('/rabbit')
 def rabbit_test():

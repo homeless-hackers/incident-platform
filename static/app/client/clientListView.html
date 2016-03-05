@@ -1,0 +1,32 @@
+﻿<div class="panel panel-primary">
+	<div class="panel-heading"
+		 style="font-size:large">
+		Clients
+	</div>
+
+	<div class="panel-body">
+		<table class="table">
+
+			<thead>
+				<tr>
+					
+					<th>Name</th>
+					<th>Birth Date</th>
+					<th>Gender</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="client in vm.clients">
+					
+					<td>
+						<a ui-sref="clientEdit.info({clientId: client._id})">
+							{{ client.Identity.FNAME}} {{client.Identity.MNAME}} {{client.Identity.LNAME}}
+						</a>
+					</td>
+					<td>{{ client.Identity.DOB }}</td>
+					<td>{{ client.Identity.SEX }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

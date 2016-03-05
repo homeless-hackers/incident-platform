@@ -1,0 +1,27 @@
+﻿<div class="panel panel-primary">
+	<div class="panel-heading" style="font-size:large">
+		{{vm.title}}
+	</div>
+
+	<div class="panel-body">
+		<div class="wizard">
+      <ul class="nav nav-tabs nav-tabs-xs">
+        <li>
+          <a ui-sref=".info"
+            ui-sref-active="active">
+            Personal Info
+          </a>
+        </li>
+        <li>
+          <a ui-sref=".incidents"
+             ui-sref-active="active">
+            Incidents
+          </a>
+        </li>
+      </ul>
+			
+		</div>
+
+		<div ui-view></div>
+	</div>
+</div>
