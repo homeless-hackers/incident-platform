@@ -33,7 +33,7 @@ def main():
   wait()
   send_events("mock_data/events/court/rob_court_event6.json", rob)
   wait()
-  send_events("mock_data/events/court/rob_court_event7.json")
+  send_events("mock_data/events/court/rob_court_event7.json", rob)
   wait()
 
   bryan = send_client("mock_data/clients/bryan.json")
