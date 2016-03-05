@@ -2,6 +2,8 @@ import amqp
 
 from flask import Flask
 app = Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/', methods=['GET'])
 def hello_world():
@@ -17,4 +19,4 @@ def rabbit_test():
     return 'Oops'
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run()
