@@ -60,15 +60,11 @@ An incident management application subscribes to new events for each client of t
 
 The monitor application accepts persons to monitor, and incidents about a person. When any data changes, it publishes an event to the message broker.
 
-### Flow
+### API
 
-POST /person : new client
-PUT /{id} : update client
-DELETE /{id} : unschedule client
-POST /{id}/incident : new incident
-GET /{id} : retrieve client (includes incidents)
-
-RabbitMQ
-
-
-
+GET /people
+POST /people
+GET /people/<id>
+PUT /people/<id>
+GET /people/<id>/incidents
+POST /people/<id>/incidents
