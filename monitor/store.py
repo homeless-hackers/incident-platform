@@ -23,11 +23,13 @@ def update(document):
 
 def store_person(person):
   if person.get('_id'):
-    return update(person)
+    doc_id, doc_rev = update(person)
   else:
-    return create(person)
+    doc_id, doc_rev = create(person)
+  return {'doc_id': doc_id, 'doc_rev': doc_rev}
 
 def store_incident(id, incident):
   person = db[id]
   person['events'].append(incident)
-  return update(incident)
+  doc_id, doc_rev = update(incident)
+  return {'doc_id': doc_id, 'doc_rev': doc_rev}
