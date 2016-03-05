@@ -1,5 +1,5 @@
 import pika, os
-from urllib.parse import urlparse
+from urlparse import urlparse
 
 url_str = os.environ.get('CLOUDAMQP_URL', 'amqp://guest:guest@localhost//')
 url = urlparse(url_str)
