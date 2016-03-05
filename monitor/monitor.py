@@ -35,7 +35,7 @@ def update_person(id):
 
 @app.route('/people/<id>/incidents', methods=['GET'])
 def get_incidents(id):
-  return 'Not implemented.'
+  return jsonify( store.get_incidents(id=id) )
 
 @app.route('/people/<id>/incidents', methods=['POST'])
 def add_incident(id):
