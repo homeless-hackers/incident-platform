@@ -4,7 +4,10 @@ import data
 import logging, sys
 
 from flask import Flask, jsonify, request
+from flask.ext.cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
