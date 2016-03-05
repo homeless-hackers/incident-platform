@@ -12,7 +12,7 @@ def connect_to_rabbit(params):
   return pika.BlockingConnection(params)
 
 def publish_event(id, event_type, event):
-  connection = connectToRabbit(params)
+  connection = connect_to_rabbit(params)
   channel = connection.channel()
   channel.exchange_declare(exchange='events') 
   channel.basic_publish(exchange='events', routing_key=id + "." + event_type, body=event)
