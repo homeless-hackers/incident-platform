@@ -1,0 +1,35 @@
+[{
+"FNAME": "SUMMER",
+"LNAME": "BAMMES",
+"DOB": "7/20/1979",
+"SEX": "F",
+"RACE": "C",
+"CITIZEN": "US"},
+{
+"FNAME": "ROB",
+"LNAME": "MARTIN",
+"DOB": "7/31/1969",
+"SEX": "M",
+"RACE": "C",
+"CITIZEN": "US"},
+{
+"FNAME": "DAN",
+"LNAME": "OTTO",
+"DOB": "6/15/1981",
+"SEX": "M",
+"RACE": "C",
+"CITIZEN": "US"},
+{
+"FNAME": "JEN",
+"LNAME": "BAGULEY",
+"DOB": "1/1/1980",
+"SEX": "F",
+"RACE": "C",
+"CITIZEN": "US"},
+{
+"FNAME": "BRYAN",
+"LNAME": "HADLOCK",
+"DOB": "10/1/1970",
+"SEX": "M",
+"RACE": "C",
+"CITIZEN": "US"}]
