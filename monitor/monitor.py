@@ -13,4 +13,4 @@ def rabbit_test():
   return 'Tried to update Rabbit.'
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
