@@ -35,7 +35,7 @@ def get_people():
 def get_person(id):
   return db[id]
 
-def store_incident(id, incident):
+def store_incident(incident, id):
   person = db[id]
   person['events'].append(incident)
   doc_id, doc_rev = update(incident)

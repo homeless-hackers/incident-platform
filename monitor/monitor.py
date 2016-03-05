@@ -39,7 +39,7 @@ def get_incidents(id):
 
 @app.route('/people/<id>/incidents', methods=['POST'])
 def add_incident(id):
-  return 'Not implemented.'
+  return jsonify( store.store_incident( incident=data.clean_incident( request.get_json() ), id=id))
 
 if __name__ == '__main__':
   app.run()

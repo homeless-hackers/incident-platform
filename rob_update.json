@@ -1,0 +1,16 @@
+{
+  "Identity": {
+    "FNAME": "MILES",
+    "MNAME": "ROBERT",
+    "LNAME": "MARTIN",
+    "DOB": "7/31/1969",
+    "SEX": "M",
+    "RACE": "C",
+    "CITIZEN": "US"
+  },
+  "Sources": [
+    "83d150d743734097a4804a81af4dbea9",
+    "4f8353f705924e6b90ed6c9e464c29c4",
+    "b05b51a063bb4e05b84cc15c29f8848b"
+  ]
+}
