@@ -55,3 +55,20 @@ An incident management application subscribes to new events for each client of t
 * Jail booking
 * Jail release date assigned
 * Jail release
+
+## Monitor
+
+The monitor application accepts persons to monitor, and incidents about a person. When any data changes, it publishes an event to the message broker.
+
+### Flow
+
+POST /person : new client
+PUT /{id} : update client
+DELETE /{id} : unschedule client
+POST /{id}/incident : new incident
+GET /{id} : retrieve client (includes incidents)
+
+RabbitMQ
+
+
+
