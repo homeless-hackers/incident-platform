@@ -38,6 +38,7 @@ def get_person(id):
 def store_incident(incident, id):
   person = db[id]
   events = person.get('events', [])
+  incident['_id'] = uuid4().hex
   events.append(incident)
   person['events'] = events
   doc_id, doc_rev = update(person)
