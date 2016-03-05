@@ -28,6 +28,9 @@ def store_person(person):
     doc_id, doc_rev = create(person)
   return {'doc_id': doc_id, 'doc_rev': doc_rev}
 
+def get_person(id):
+  return db[id]
+
 def store_incident(id, incident):
   person = db[id]
   person['events'].append(incident)

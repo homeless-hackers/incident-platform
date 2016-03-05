@@ -1,5 +1,5 @@
 from amqp import publish_event
-from store import store_person, store_incident
+from store import store_person, get_person, store_incident
 from data import clean_person, clean_incident
 import logging, sys
 
@@ -27,11 +27,11 @@ def add_person():
 
 @app.route('/people/<id>', methods=['GET'])
 def get_person(id):
-  return 'Not implemented.'
+  return jsonify( get_person(id) )
 
 @app.route('/people/<id>', methods=['PUT'])
 def update_person(id):
-  return 'Not implemented.'
+  return jsonify( store_person( clean_person( request.get_json() )))
 
 @app.route('/people/<id>/incidents', methods=['GET'])
 def get_incidents(id):
