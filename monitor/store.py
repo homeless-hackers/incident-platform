@@ -30,7 +30,7 @@ def store_person(person, id=False):
   return {'doc_id': doc_id, 'doc_rev': doc_rev}
 
 def get_people():
-  return [db[id] for id in db]
+  return {'people': [db[id] for id in db]}
 
 def get_person(id):
   return db[id]
