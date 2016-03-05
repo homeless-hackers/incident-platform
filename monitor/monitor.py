@@ -19,7 +19,7 @@ def rabbit_test():
 
 @app.route('/people', methods=['GET'])
 def get_people():
-  return 'Not implemented.'
+  return jsonify( store.get_people() )
 
 @app.route('/people', methods=['POST'])
 def add_person():
