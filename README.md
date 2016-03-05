@@ -62,9 +62,9 @@ The monitor application accepts persons to monitor, and incidents about a person
 
 ### API
 
-GET /people
-POST /people
-GET /people/<id>
-PUT /people/<id>
-GET /people/<id>/incidents
-POST /people/<id>/incidents
+GET /people : Get all people, returns JSON
+POST /people : Create a new person (POST JSON), returns doc_id and doc_rev
+GET /people/<id> : Get a specific person, returns JSON
+PUT /people/<id> : Update a specific person (PUT JSON), returns doc_id and doc_rev
+GET /people/<id>/incidents : get all incidents for a person, returns JSON
+POST /people/<id>/incidents : create a new incident (POST JSON), returns doc_id and doc_rev
