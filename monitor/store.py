@@ -16,6 +16,7 @@ def restart():
   couch.delete(params['db'])
   couch.create(params['db'])
   db = couch[params['db']]
+  return "Database restarted"
 
 def create(document):
   document['_id'] = uuid4().hex
