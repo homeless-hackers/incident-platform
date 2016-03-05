@@ -1,0 +1,8 @@
+{
+  "name": "hh-incident-monitor",
+  "description": "The incident monitoring and management platform",
+  "image": "heroku/python",
+  "repository": "https://github.com/homeless-hackers/incident-platform.git",
+  "keywords": ["python", "flask" ],
+  "addons": [ "heroku-postgresql", "cloudamqp" ]
+}
