@@ -31,7 +31,7 @@ def get_person(id):
 
 @app.route('/people/<id>', methods=['PUT'])
 def update_person(id):
-  return jsonify( store.store_person( id=id, person=data.clean_person( request.get_json() )))
+  return jsonify( store.store_person( person=data.clean_person( request.get_json() ), id=id))
 
 @app.route('/people/<id>/incidents', methods=['GET'])
 def get_incidents(id):
