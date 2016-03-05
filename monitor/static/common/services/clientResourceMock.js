@@ -26,7 +26,7 @@
 							for (var m = 0; m < tempIncidents.length; m++) {
 								var incident = tempIncidents[m];
 								client.events.push(incident);
-								toastr.info("An new incident has been added for " + client.Identity.FNAME + " " + client.Identity.LNAME);
+								toastr.info("A new incident has been added for " + client.Identity.FNAME + " " + client.Identity.LNAME);
 							}
 							temppeople.splice(i, 1);
 						}
