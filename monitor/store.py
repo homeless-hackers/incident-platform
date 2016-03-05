@@ -21,8 +21,8 @@ def update(document):
   document['_rev'] = doc['_rev']
   return db.save(document)
 
-def store_person(person):
-  if person.get('_id'):
+def store_person(id=False, person):
+  if id:
     doc_id, doc_rev = update(person)
   else:
     doc_id, doc_rev = create(person)
