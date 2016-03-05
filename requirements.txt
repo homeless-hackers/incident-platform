@@ -6,3 +6,4 @@ pika==0.10.0
 couchdb==1.0
 flask-cors==2.1.2
 requests==2.9.1
+simplejson

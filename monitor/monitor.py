@@ -44,5 +44,9 @@ def get_incidents(id):
 def add_incident(id):
   return jsonify( store.store_incident( incident=data.clean_incident( request.get_json() ), id=id))
 
+@app.route('/killkillkill', methods=['GET'])
+def get_people():
+  return store.restart()
+
 if __name__ == '__main__':
   app.run()

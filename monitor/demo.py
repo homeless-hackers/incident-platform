@@ -1,24 +1,31 @@
-import store
+import requests
+import simplejson as json
+
+base = "https://hh-incident-monitoring-service.herokuapp.com/"
 
 def send_client(file):
-  print(store.store_person( person=data.clean_person( open(file, 'rb').read() )))
+  r = requests.post(base + 'people', data = open(file, 'rb').read())
+  response = json.loads(r.json)
+  print(r.json())
+  return response['doc_id']
+
   print(file)
 
-def send_events(file):
-  print(store.store_incident( person=data.clean_incident( open(file, 'rb').read() )))
-  print(file)
+def send_events(file, id):
+  r = requests.post(base + 'people/' + id + '/incidents', data = open(file, 'rb').read())
+  print(r.json())
 
 def wait():
   input("Press Enter to continue...")
 
 def empty_db():
-  store.restart()
+  r = requests.get(base + 'killkillkill')
   print("Database emptied")
 
 def main():
   empty_db()
   wait()
-  send_client("mock_data/clients/dan.json")
+  dan = send_client("mock_data/clients/dan.json")
   wait()
   send_events("mock_data/events/court/dan_court_event1.json")
   wait()
@@ -28,10 +35,10 @@ def main():
   send_events("mock_data/events/court/dan_court_event4.json")
   send_events("mock_data/events/court/dan_court_event5.json")
   wait()
-  send_client("mock_data/clients/rob.json")
-  send_client("mock_data/clients/jen.json")
-  send_client("mock_data/clients/bryan.json")
-  send_client("mock_data/clients/summer.json")
+  rob = send_client("mock_data/clients/rob.json")
+  jen = send_client("mock_data/clients/jen.json")
+  bryan = send_client("mock_data/clients/bryan.json")
+  summer = send_client("mock_data/clients/summer.json")
   wait()
   send_events("mock_data/events/court/rob_court_event1.json")
   send_events("mock_data/events/court/rob_court_event2.json")
