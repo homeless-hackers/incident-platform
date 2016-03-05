@@ -1,4 +1,6 @@
-import amqp
+from amqp import publish_event
+from store import store_person, store_incident
+from data import clean_person, clean_incident
 import logging, sys
 
 from flask import Flask, jsonify
@@ -12,7 +14,7 @@ def hello_world():
 
 @app.route('/rabbit')
 def rabbit_test():
-  amqp.publish_event(id='personid', event_type='test_event', event='another event message')
+  publish_event(id='personid', event_type='test_event', event='another event message')
   return 'Tried to update Rabbit.'
 
 @app.route('/people', methods=['GET'])
@@ -21,7 +23,7 @@ def get_people():
 
 @app.route('/people', methods=['POST'])
 def add_person():
-  return 'Not implemented.'
+  return store_person( clean_person( request.get_json() ))
 
 @app.route('/people/<id>', methods=['GET'])
 def get_person(id):
