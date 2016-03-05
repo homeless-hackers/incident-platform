@@ -3,7 +3,7 @@ from store import store_person, store_incident
 from data import clean_person, clean_incident
 import logging, sys
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 app = Flask(__name__)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
