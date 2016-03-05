@@ -9,8 +9,12 @@ def hello_world():
 
 @app.route('/rabbit')
 def rabbit_test():
-  amqp.publish_event('personid', 'test_event', 'my event message')
-  return 'Tried to update Rabbit.'
+  try:
+    amqp.publish_event('personid', 'test_event', 'my event message')
+    return 'Tried to update Rabbit.'
+  except:
+    traceback.print_exc(file=sys.stdout)
+    return 'Oops'
 
 if __name__ == '__main__':
   app.run(debug=True)
