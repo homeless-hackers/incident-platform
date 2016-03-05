@@ -23,7 +23,7 @@ def get_people():
 
 @app.route('/people', methods=['POST'])
 def add_person():
-  return store_person( clean_person( request.get_json() ))
+  return jsonify( store_person( clean_person( request.get_json() )))
 
 @app.route('/people/<id>', methods=['GET'])
 def get_person(id):
