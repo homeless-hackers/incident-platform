@@ -42,3 +42,6 @@ def store_incident(incident, id):
   person['events'] = events
   doc_id, doc_rev = update(person)
   return {'doc_id': doc_id, 'doc_rev': doc_rev}
+
+def get_incidents(id):
+  return {'incidents': db[id]['events'] }
