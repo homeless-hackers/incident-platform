@@ -13,8 +13,9 @@ couch.resource.credentials = (params['username'], params['password'])
 db = couch[params['db']]
 
 def restart():
-  db.delete(params['db'])
-  db.create(params['db'])
+  couch.delete(params['db'])
+  couch.create(params['db'])
+  db = couch[params['db']]
 
 def create(document):
   document['_id'] = uuid4().hex
