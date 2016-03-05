@@ -13,7 +13,7 @@ app.logger.setLevel(logging.ERROR)
 
 @app.route('/', methods=['GET'])
 def hello_world():
-  return app.send_static_file('index.html')
+  return app.send_static_file('static/index.html')
 
 @app.route('/rabbit')
 def rabbit_test():
