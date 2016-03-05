@@ -12,6 +12,10 @@ couch = couchdb.Server(params['url'])
 couch.resource.credentials = (params['username'], params['password'])
 db = couch[params['db']]
 
+def restart():
+  db.delete(params['db'])
+  db.create(params['db'])
+
 def create(document):
   document['_id'] = uuid4().hex
   return db.save(document)
