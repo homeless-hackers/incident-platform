@@ -26,6 +26,7 @@ def get_people():
 
 @app.route('/people', methods=['POST'])
 def add_person():
+  print request.get_json()
   return jsonify( store.store_person( person=data.clean_person( request.get_json() )))
 
 @app.route('/people/<id>', methods=['GET'])

@@ -4,15 +4,18 @@ import simplejson as json
 base = "https://hh-incident-monitoring-service.herokuapp.com/"
 
 def send_client(file):
-  r = requests.post(base + 'people', data = open(file, 'rb').read())
-  response = json.loads(r.json)
-  print(r.json())
-  return response['doc_id']
+  data = open(file, 'rb').read()
+  print(data)
+  r = requests.post(base + 'people', data = data)
+  print(r.content)
+  #response = r.json()
+  #return response['doc_id']
 
   print(file)
 
 def send_events(file, id):
-  r = requests.post(base + 'people/' + id + '/incidents', data = open(file, 'rb').read())
+  data = open(file, 'rb').read()
+  r = requests.post(base + 'people/' + id + '/incidents', data = data)
   print(r.json())
 
 def wait():
