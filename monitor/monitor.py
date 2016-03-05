@@ -12,7 +12,7 @@ def hello_world():
 
 @app.route('/rabbit')
 def rabbit_test():
-  amqp.publish_event('personid', 'test_event', 'another event message')
+  amqp.publish_event(id='personid', event_type='test_event', event='another event message')
   return 'Tried to update Rabbit.'
 
 if __name__ == '__main__':
