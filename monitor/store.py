@@ -23,6 +23,7 @@ def update(document):
 
 def store_person(person, id=False):
   if id:
+    person['_id'] = id
     doc_id, doc_rev = update(person)
   else:
     doc_id, doc_rev = create(person)
