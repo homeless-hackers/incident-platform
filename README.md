@@ -1,6 +1,6 @@
 # Homeless Hackers
 
-The Homeless Hackers team is creating an incident monitoring and management platform intended for use by governmental and non-governmental agencies working with homeless, mentally ill, and at risk populations.
+The Homeless Hackers team is creating an incident monitoring and management platform intended for use by governmental and non-governmental agencies working with at-risk populations, including individuals experiencing homelessness and mental illness.
 
 An incident monitoring service polls various data sources, including courts, jails, prisons, probation and parole records, and reports on criminal and mental health events related to clients of the agencies.
 
@@ -48,12 +48,10 @@ An incident management application subscribes to new events for each client of t
 ## Example incidents
 
 * Citation issued
-* Hearing or other court date scheduled
-* Arraignment scheduled
+* Hearing or other court appearance scheduled
 * Charges filed
 * Warrant issued
 * Sentence entered
-* Pretrial conference
 * Jail booking
 * Jail release date assigned
 * Jail release
