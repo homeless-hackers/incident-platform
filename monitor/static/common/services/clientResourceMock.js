@@ -13,22 +13,30 @@
 					for (var j = 0; j < clients.length; j++) {
 						var client = clients[j];
 						if (person._id == client._id) {
-							var tempIncidents = person.events.splice(0);
-							for (var k = 0; k < person.events.length; k++) {
-								var incident = person.events[k];
-								for (var l = 0; l < client.events.length; l++) {
-									var event = client.events[l];
-									if (incident._id == event._id) {
-										tempIncidents.splice(k,1);
+							if (client.events) {
+								var tempIncidents = client.events.slice(0);
+								for (var k = 0; k < client.events.length; k++) {
+									var incident = client.events[k];
+									for (var l = 0; l < person.events.length; l++) {
+										var event = person.events[l];
+										if (incident._id == event._id) {
+
+											var p = tempIncidents.indexOf(incident);
+											tempIncidents.splice(p, 1);
+										}
 									}
 								}
+								for (var m = 0; m < tempIncidents.length; m++) {
+									var incident = tempIncidents[m];
+									client.events.push(incident);
+									toastr.info("An new incident has been added for " + client.FNAME + " " + client.LNAME);
+								}
 							}
-							for (var m = 0; m < tempIncidents.length; m++) {
-								var incident = tempIncidents[m];
-								client.events.push(incident);
-								toastr.info("A new incident has been added for " + client.Identity.FNAME + " " + client.Identity.LNAME);
+							else {
+								client.events = [];
 							}
-							temppeople.splice(i, 1);
+							var q = temppeople.indexOf(client);
+							temppeople.splice(q, 1);
 						}
 					}
 				}
@@ -45,7 +53,8 @@
 	}
 	setInterval(function () {
 		getClients();
-	}, 10000);
+	}, 2000);
+	getClients();
 
 
 	var app = angular
@@ -53,36 +62,7 @@
                 ["ngMockE2E"]);
 
 	app.run(function ($httpBackend) {
-		 clients = [
-			{
-				Identity: {
-					CITIZEN: "US",
-					DOB: "7/31/1969",
-					FNAME: "MILES",
-					LNAME: "MARTIN",
-					MNAME: "ROBERT",
-					RACE: "C",
-					SEX: "M"
-				},
-				Sources: [
-				"83d150d743734097a4804a81af4dbea9",
-				"4f8353f705924e6b90ed6c9e464c29c4",
-				"b05b51a063bb4e05b84cc15c29f8848b"
-				],
-				_id: "361cee526d0a4a1ba24aa4ebfc1e278f",
-				_rev: "4-21720edb8c58cbd57538268c9971a3c5",
-				events: [
-				{
-					CASE_ID: "1457",
-					DATE: "3/6/2016",
-					HEARING_TYPE: "BENCH",
-					TIME: "8:00 AM",
-					TITLE: "MARTIN, ROB",
-					_id: "001caddee7d946cfbd3381f0eae5da16"
-				}
-				]
-			}
-			];
+		 clients = [];
 
 		var clientUrl = "api/clients"
 
