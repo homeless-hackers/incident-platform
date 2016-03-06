@@ -13,12 +13,12 @@
 					for (var j = 0; j < clients.length; j++) {
 						var client = clients[j];
 						if (person._id == client._id) {
-							if (client.events) {
+							if (person.events) {
 								var tempIncidents = person.events.slice(0);
-								for (var k = 0; k < client.events.length; k++) {
-									var incident = client.events[k];
-									for (var l = 0; l < person.events.length; l++) {
-										var event = person.events[l];
+								for (var k = 0; k < person.events.length; k++) {
+									var incident = person.events[k];
+									for (var l = 0; l < client.events.length; l++) {
+										var event = client.events[l];
 										if (incident._id == event._id) {
 
 											var p = tempIncidents.indexOf(incident);
@@ -29,7 +29,7 @@
 								for (var m = 0; m < tempIncidents.length; m++) {
 									var incident = tempIncidents[m];
 									client.events.push(incident);
-									toastr.info("An new incident has been added for " + client.FNAME + " " + client.LNAME);
+									toastr.info("An new incident has been added for " + client.Identity.FNAME + " " + client.Identity.LNAME);
 								}
 							}
 							else {
