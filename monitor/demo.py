@@ -27,8 +27,6 @@ def main():
   wait()
   rob = send_client("mock_data/clients/rob.json")
   wait()
-  send_events("mock_data/events/jail/rob_jail_event1.json", rob)
-  wait()
   send_events("mock_data/events/court/rob_court_event5.json", rob)
   wait()
   send_events("mock_data/events/court/rob_court_event6.json", rob)
